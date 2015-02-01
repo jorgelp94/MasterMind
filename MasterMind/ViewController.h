@@ -22,6 +22,10 @@
 @property (strong, nonatomic) IBOutlet UIView *correcto3;
 @property (strong, nonatomic) IBOutlet UIView *correcto4;
 
+@property (strong, nonatomic) IBOutlet UIButton *selBoton1;
+@property (strong, nonatomic) IBOutlet UIButton *selBoton2;
+@property (strong, nonatomic) IBOutlet UIButton *selBoton3;
+@property (strong, nonatomic) IBOutlet UIButton *selBoton4;
 
 
 //Actions
@@ -39,6 +43,8 @@
 @property int colorCount2;
 @property int colorCount3;
 @property int colorCount4;
+
+@property int cuentaVistas;
 
 @end
 

@@ -17,10 +17,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    self.selBoton1.backgroundColor = UIColor.redColor;
+    self.selBoton2.backgroundColor = UIColor.redColor;
+    self.selBoton3.backgroundColor = UIColor.redColor;
+    self.selBoton4.backgroundColor = UIColor.redColor;
+    
     self.colorCount = 0;
     self.colorCount2 = 0;
     self.colorCount3 = 0;
     self.colorCount4 = 0;
+    
+    self.cuentaVistas = 0;
     
     self.viewProbar.hidden = YES; //Oculta segundo View
     
@@ -30,6 +38,7 @@
     self.correcto4.hidden = YES;
     
     [self coloresRandom];
+    
     
 }
 
@@ -160,15 +169,29 @@
 
 - (IBAction)botonIniciar:(UIButton *)sender {
     [self viewDidLoad];
-    // Falta reiniciar el color de los botones
     // Reiniciar la posicion del segmented control
 }
 
 - (IBAction)botonProbar:(UIButton *)sender {
-    // Compara colores
-    // Verifica que no se repitan. Si se repiten se manda una alerta y no deja que de resultado
+    // Verificar error con colores iniciales
     // Después de comparar colores muestra cuadro rojo o cuadro blanco indicando resultado.
-    
+    if (self.selBoton1.backgroundColor == self.selBoton2.backgroundColor || self.selBoton1.backgroundColor == self.selBoton3.backgroundColor || self.selBoton1.backgroundColor == self.selBoton4.backgroundColor || self.selBoton2.backgroundColor == self.selBoton3.backgroundColor || self.selBoton2.backgroundColor == self.selBoton4.backgroundColor || self.selBoton3.backgroundColor == self.selBoton4.backgroundColor) {
+        
+        NSString *mensaje = [[NSString alloc] initWithFormat: @"No puedes tener colores repetidos"];
+        UIAlertView *alerta = [[UIAlertView alloc] initWithTitle:@"Error"
+                                                         message:mensaje
+                                                        delegate:self
+                                               cancelButtonTitle:@"OK"
+                                               otherButtonTitles: nil];
+        [alerta show];
+    }
+    else {
+        // comparacion de colores
+        [self verificaColores:self.color1 color2:self.color2 color3:self.color3 color4:self.color4 conBoton:self.selBoton1];
+        [self verificaColores:self.color1 color2:self.color2 color3:self.color3 color4:self.color4 conBoton:self.selBoton2];
+        [self verificaColores:self.color1 color2:self.color2 color3:self.color3 color4:self.color4 conBoton:self.selBoton3];
+        [self verificaColores:self.color1 color2:self.color2 color3:self.color3 color4:self.color4 conBoton:self.selBoton4];
+    }
 }
 
 - (void)coloresRandom {
@@ -215,6 +238,48 @@
         default:
             break;
     }
+}
+
+- (void)verificaColores:(UIView *)solucion color2:(UIView *)solucion2 color3:(UIView *)solucion3 color4:(UIView *)solucion4 conBoton:(UIButton *)boton {
+    // Posicion y color correcto - Rojo
+    if (solucion.backgroundColor == boton.backgroundColor || solucion2.backgroundColor == boton.backgroundColor || solucion3.backgroundColor == boton.backgroundColor || solucion4.backgroundColor == boton.backgroundColor) {
+//        self.cuentaVistas++;
+//        switch (self.cuentaVistas) {
+//            case 1:
+//                self.correcto1.backgroundColor = UIColor.redColor;
+//                self.correcto1.hidden = NO;
+//                break;
+//            case 2:
+//                self.correcto2.backgroundColor = UIColor.redColor;
+//                self.correcto2.hidden = NO;
+//                break;
+//            case 3:
+//                self.correcto3.backgroundColor = UIColor.redColor;
+//                self.correcto3.hidden = NO;
+//                break;
+//            case 4:
+//                self.correcto4.backgroundColor = UIColor.redColor;
+//                self.correcto4.hidden = NO;
+//                break;
+//                
+//            default:
+//                break;
+//        }
+//        if (self.cuentaVistas > 4) {
+//            self.cuentaVistas = 0;
+//        }
+    }
+    /*
+    if ((solucion.backgroundColor == boton.backgroundColor && solucion2.backgroundColor == boton.backgroundColor) || (solucion.backgroundColor == boton.backgroundColor && solucion3.backgroundColor == boton.backgroundColor) || (solucion.backgroundColor == boton.backgroundColor && solucion4.backgroundColor == boton.backgroundColor) || (solucion2.backgroundColor == boton.backgroundColor && solucion3.backgroundColor == boton.backgroundColor) || (solucion2.backgroundColor == boton.backgroundColor && solucion4.backgroundColor == boton.backgroundColor) || (solucion3.backgroundColor == boton.backgroundColor && solucion4.backgroundColor == boton.backgroundColor)) {
+        self.correcto1.backgroundColor = UIColor.redColor;
+        self.correcto2.backgroundColor = UIColor.redColor;
+    }
+    if ((solucion.backgroundColor == boton.backgroundColor && solucion2.backgroundColor == boton.backgroundColor)) {
+        <#statements#>
+    }
+     */
+    
+    // Posición equivocada y color correcto - Blanco
 }
 
 @end

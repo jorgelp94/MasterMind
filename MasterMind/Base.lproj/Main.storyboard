@@ -120,8 +120,8 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5RB-6E-OW1">
-                                <rect key="frame" x="263" y="426" width="46" height="30"/>
-                                <state key="normal" title="Probar">
+                                <rect key="frame" x="263" y="426" width="39" height="30"/>
+                                <state key="normal" title="Jugar">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -141,6 +141,10 @@
                         <outlet property="correcto2" destination="tUl-Oc-BJk" id="LXd-9T-yze"/>
                         <outlet property="correcto3" destination="jIY-P0-gTm" id="1xA-0c-eFR"/>
                         <outlet property="correcto4" destination="wwG-c1-whM" id="kgI-Of-6gl"/>
+                        <outlet property="selBoton1" destination="a76-AH-BCA" id="kAh-PH-Glo"/>
+                        <outlet property="selBoton2" destination="fRC-4S-hS9" id="jgO-5T-pqI"/>
+                        <outlet property="selBoton3" destination="wxD-hh-qCa" id="gZk-A8-mji"/>
+                        <outlet property="selBoton4" destination="D8t-1A-Zla" id="IX7-fL-3oa"/>
                         <outlet property="viewProbar" destination="BEA-pF-lm7" id="Auc-Bh-mgO"/>
                     </connections>
                 </viewController>
