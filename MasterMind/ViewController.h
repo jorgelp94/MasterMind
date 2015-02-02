@@ -44,7 +44,6 @@
 @property int colorCount3;
 @property int colorCount4;
 
-@property int cuentaVistas;
 
 @end
 

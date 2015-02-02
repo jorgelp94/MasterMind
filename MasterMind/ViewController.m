@@ -28,8 +28,6 @@
     self.colorCount3 = 0;
     self.colorCount4 = 0;
     
-    self.cuentaVistas = 0;
-    
     self.viewProbar.hidden = YES; //Oculta segundo View
     
     self.correcto1.hidden = YES;
@@ -187,10 +185,7 @@
     }
     else {
         // comparacion de colores
-        [self verificaColores:self.color1 color2:self.color2 color3:self.color3 color4:self.color4 conBoton:self.selBoton1];
-        [self verificaColores:self.color1 color2:self.color2 color3:self.color3 color4:self.color4 conBoton:self.selBoton2];
-        [self verificaColores:self.color1 color2:self.color2 color3:self.color3 color4:self.color4 conBoton:self.selBoton3];
-        [self verificaColores:self.color1 color2:self.color2 color3:self.color3 color4:self.color4 conBoton:self.selBoton4];
+        [self verificaColores:self.color1 color2:self.color2 color3:self.color3 color4:self.color4 conBoton:self.selBoton1 segundoBoton:self.selBoton2 tercerBoton:self.selBoton3 cuartoBoton:self.selBoton4];
     }
 }
 
@@ -240,46 +235,21 @@
     }
 }
 
-- (void)verificaColores:(UIView *)solucion color2:(UIView *)solucion2 color3:(UIView *)solucion3 color4:(UIView *)solucion4 conBoton:(UIButton *)boton {
-    // Posicion y color correcto - Rojo
-    if (solucion.backgroundColor == boton.backgroundColor || solucion2.backgroundColor == boton.backgroundColor || solucion3.backgroundColor == boton.backgroundColor || solucion4.backgroundColor == boton.backgroundColor) {
-//        self.cuentaVistas++;
-//        switch (self.cuentaVistas) {
-//            case 1:
-//                self.correcto1.backgroundColor = UIColor.redColor;
-//                self.correcto1.hidden = NO;
-//                break;
-//            case 2:
-//                self.correcto2.backgroundColor = UIColor.redColor;
-//                self.correcto2.hidden = NO;
-//                break;
-//            case 3:
-//                self.correcto3.backgroundColor = UIColor.redColor;
-//                self.correcto3.hidden = NO;
-//                break;
-//            case 4:
-//                self.correcto4.backgroundColor = UIColor.redColor;
-//                self.correcto4.hidden = NO;
-//                break;
-//                
-//            default:
-//                break;
-//        }
-//        if (self.cuentaVistas > 4) {
-//            self.cuentaVistas = 0;
-//        }
-    }
-    /*
-    if ((solucion.backgroundColor == boton.backgroundColor && solucion2.backgroundColor == boton.backgroundColor) || (solucion.backgroundColor == boton.backgroundColor && solucion3.backgroundColor == boton.backgroundColor) || (solucion.backgroundColor == boton.backgroundColor && solucion4.backgroundColor == boton.backgroundColor) || (solucion2.backgroundColor == boton.backgroundColor && solucion3.backgroundColor == boton.backgroundColor) || (solucion2.backgroundColor == boton.backgroundColor && solucion4.backgroundColor == boton.backgroundColor) || (solucion3.backgroundColor == boton.backgroundColor && solucion4.backgroundColor == boton.backgroundColor)) {
-        self.correcto1.backgroundColor = UIColor.redColor;
-        self.correcto2.backgroundColor = UIColor.redColor;
-    }
-    if ((solucion.backgroundColor == boton.backgroundColor && solucion2.backgroundColor == boton.backgroundColor)) {
-        <#statements#>
-    }
-     */
+- (void)verificaColores:(UIView *)solucion color2:(UIView *)solucion2 color3:(UIView *)solucion3 color4:(UIView *)solucion4 conBoton:(UIButton *)boton segundoBoton:(UIButton *)boton2 tercerBoton:(UIButton *)boton3 cuartoBoton:(UIButton *)boton4 {
     
-    // Posición equivocada y color correcto - Blanco
+    if (solucion.backgroundColor == boton.backgroundColor) {
+        // View 1 cambia a rojo
+        // Posicion y color correcto - Rojo
+        self.correcto1.backgroundColor = UIColor.redColor;
+        self.correcto1.hidden = NO;
+    } else if(solucion2.backgroundColor == boton.backgroundColor || solucion3.backgroundColor == boton.backgroundColor || solucion4.backgroundColor == boton.backgroundColor) {
+        // View 4 cambia a blanco
+        // Posición equivocada y color correcto - Blanco
+        self.correcto4.backgroundColor = UIColor.whiteColor;
+        self.correcto4.hidden = NO;
+    }
+    
+    
 }
 
 @end
