@@ -28,6 +28,8 @@
     self.colorCount3 = 0;
     self.colorCount4 = 0;
     
+    self.contadorIntentos = 0;
+    
     self.contadorPosicionCorrecta = 0;
     self.contadorColorCorrecto = 0;
     
@@ -199,6 +201,8 @@
     else {
         // comparacion de colores
         [self verificaColores:self.color1 color2:self.color2 color3:self.color3 color4:self.color4 conBoton:self.selBoton1 segundoBoton:self.selBoton2 tercerBoton:self.selBoton3 cuartoBoton:self.selBoton4];
+        
+        self.contadorIntentos += 1;
     }
 }
 
@@ -489,9 +493,22 @@
                 break;
         }
     }
-
-
     
+    [self yaGane:self.contadorColorCorrecto];
+    
+}
+
+- (void)yaGane:(int)contadorRojo {
+    if (contadorRojo == 4) {
+        NSString *mensaje = [[NSString alloc] initWithFormat: @"Ganaste en %i intentos", self.contadorIntentos];
+        UIAlertView *alerta = [[UIAlertView alloc] initWithTitle:@"Felicidades"
+                                                         message:mensaje
+                                                        delegate:self
+                                               cancelButtonTitle:@"Reiniciar"
+                                               otherButtonTitles: nil];
+        [alerta show];
+        [self viewDidLoad];
+    }
 }
 
 @end

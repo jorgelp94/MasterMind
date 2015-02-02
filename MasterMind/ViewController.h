@@ -45,6 +45,8 @@
 @property int colorCount3;
 @property int colorCount4;
 
+@property int contadorIntentos;
+
 @property int contadorPosicionCorrecta;
 @property int contadorColorCorrecto;
 
