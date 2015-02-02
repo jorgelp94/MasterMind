@@ -48,6 +48,15 @@
 @property int contadorPosicionCorrecta;
 @property int contadorColorCorrecto;
 
+@property BOOL agregarojo1;
+@property BOOL agregarojo2;
+@property BOOL agregarojo3;
+@property BOOL agregarojo4;
+
+@property BOOL agregaBlanco1;
+@property BOOL agregaBlanco2;
+@property BOOL agregaBlanco3;
+@property BOOL agregaBlanco4;
 
 @end
 
