@@ -28,6 +28,9 @@
     self.colorCount3 = 0;
     self.colorCount4 = 0;
     
+    self.contadorPosicionCorrecta = 0;
+    self.contadorColorCorrecto = 0;
+    
     self.viewProbar.hidden = YES; //Oculta segundo View
     
     self.correcto1.hidden = YES;
@@ -37,6 +40,7 @@
     
     [self coloresRandom];
     
+    self.controlSegmento.selectedSegmentIndex = 0;
     
 }
 
@@ -167,7 +171,6 @@
 
 - (IBAction)botonIniciar:(UIButton *)sender {
     [self viewDidLoad];
-    // Reiniciar la posicion del segmented control
 }
 
 - (IBAction)botonProbar:(UIButton *)sender {
@@ -248,7 +251,6 @@
         self.correcto4.backgroundColor = UIColor.whiteColor;
         self.correcto4.hidden = NO;
     }
-    
     
 }
 

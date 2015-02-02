@@ -27,6 +27,7 @@
 @property (strong, nonatomic) IBOutlet UIButton *selBoton3;
 @property (strong, nonatomic) IBOutlet UIButton *selBoton4;
 
+@property (strong, nonatomic) IBOutlet UISegmentedControl *controlSegmento;
 
 //Actions
 
@@ -43,6 +44,9 @@
 @property int colorCount2;
 @property int colorCount3;
 @property int colorCount4;
+
+@property int contadorPosicionCorrecta;
+@property int contadorColorCorrecto;
 
 
 @end

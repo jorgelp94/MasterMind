@@ -137,6 +137,7 @@
                         <outlet property="color2" destination="4ra-Aw-usg" id="E4D-6L-ysv"/>
                         <outlet property="color3" destination="VCj-Du-Thy" id="TIL-TJ-svD"/>
                         <outlet property="color4" destination="gZs-Zr-iFJ" id="pSi-DL-eEQ"/>
+                        <outlet property="controlSegmento" destination="rbU-4C-o1S" id="R59-1D-ump"/>
                         <outlet property="correcto1" destination="qWQ-u1-VjE" id="ie5-5r-ebz"/>
                         <outlet property="correcto2" destination="tUl-Oc-BJk" id="LXd-9T-yze"/>
                         <outlet property="correcto3" destination="jIY-P0-gTm" id="1xA-0c-eFR"/>
