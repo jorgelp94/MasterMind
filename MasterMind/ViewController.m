@@ -54,6 +54,14 @@
     self.agregaBlanco3 = YES;
     self.agregaBlanco4 = YES;
     
+//    NSString *mensaje = [[NSString alloc] initWithFormat: @"Por alguna razón no funciona correctamente al inciar el juego si no hasta que oprimes 'iniciar' funciona correctamente. Debido a esta alerta, cuando ganas aparece ésta antes de la alerta con el mensaje de 'ganaste'."];
+//    UIAlertView *alerta = [[UIAlertView alloc] initWithTitle:@"Saludos"
+//                                                     message:mensaje
+//                                                    delegate:self
+//                                           cancelButtonTitle:@"OK"
+//                                           otherButtonTitles: nil];
+//    [alerta show];
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -200,9 +208,8 @@
     }
     else {
         // comparacion de colores
-        [self verificaColores:self.color1 color2:self.color2 color3:self.color3 color4:self.color4 conBoton:self.selBoton1 segundoBoton:self.selBoton2 tercerBoton:self.selBoton3 cuartoBoton:self.selBoton4];
-        
         self.contadorIntentos += 1;
+        [self verificaColores:self.color1 color2:self.color2 color3:self.color3 color4:self.color4 conBoton:self.selBoton1 segundoBoton:self.selBoton2 tercerBoton:self.selBoton3 cuartoBoton:self.selBoton4];
     }
 }
 
@@ -494,21 +501,18 @@
         }
     }
     
-    [self yaGane:self.contadorColorCorrecto];
-    
-}
-
-- (void)yaGane:(int)contadorRojo {
-    if (contadorRojo == 4) {
+    if (self.correcto1.backgroundColor == UIColor.redColor && self.correcto2.backgroundColor == UIColor.redColor && self.correcto3.backgroundColor == UIColor.redColor && self.correcto4.backgroundColor == UIColor.redColor) {
         NSString *mensaje = [[NSString alloc] initWithFormat: @"Ganaste en %i intentos", self.contadorIntentos];
         UIAlertView *alerta = [[UIAlertView alloc] initWithTitle:@"Felicidades"
                                                          message:mensaje
                                                         delegate:self
-                                               cancelButtonTitle:@"Reiniciar"
+                                               cancelButtonTitle:@"Volver a jugar"
                                                otherButtonTitles: nil];
         [alerta show];
         [self viewDidLoad];
     }
+    
 }
+
 
 @end
