@@ -209,7 +209,20 @@
     else {
         // comparacion de colores
         self.contadorIntentos += 1;
+        
+        //Reinicia views indicadores de respuesta
+        self.correcto1.hidden = YES;
+        self.correcto2.hidden = YES;
+        self.correcto3.hidden = YES;
+        self.correcto4.hidden = YES;
+        
         [self verificaColores:self.color1 color2:self.color2 color3:self.color3 color4:self.color4 conBoton:self.selBoton1 segundoBoton:self.selBoton2 tercerBoton:self.selBoton3 cuartoBoton:self.selBoton4];
+        
+        // Reinicia contadores
+        self.contadorColorCorrecto = 0;
+        self.contadorPosicionCorrecta = 0;
+        
+        
     }
 }
 
