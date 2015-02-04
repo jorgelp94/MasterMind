@@ -47,7 +47,7 @@ int cuentaAlertas = 0;
     
     if (cuentaAlertas <= 1) {
         NSString *mensaje = [[NSString alloc] initWithFormat: @"Por alguna razón no funciona correctamente al inciar el juego si no hasta que oprimes el boton probar después de seleccionar un patrón, luego reinicias el juego, pruebas, vuelves a reiniciar y ahora si funciona. En algunos casos funciona con que pruebes y reinicies una vez."];
-        UIAlertView *alerta = [[UIAlertView alloc] initWithTitle:@"Saludos"
+        UIAlertView *alerta = [[UIAlertView alloc] initWithTitle:@"Hola"
                                                          message:mensaje
                                                         delegate:self
                                                cancelButtonTitle:@"OK"
