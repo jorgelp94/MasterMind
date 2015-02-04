@@ -11,8 +11,9 @@
 @interface ViewController ()
 
 @end
-
 @implementation ViewController
+
+int cuentaAlertas = 0;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -44,23 +45,16 @@
     
     self.controlSegmento.selectedSegmentIndex = 0;
     
-    self.agregarojo1 = YES;
-    self.agregarojo2 = YES;
-    self.agregarojo3 = YES;
-    self.agregarojo4 = YES;
-    
-    self.agregaBlanco1 = YES;
-    self.agregaBlanco2 = YES;
-    self.agregaBlanco3 = YES;
-    self.agregaBlanco4 = YES;
-    
-//    NSString *mensaje = [[NSString alloc] initWithFormat: @"Por alguna razón no funciona correctamente al inciar el juego si no hasta que oprimes 'iniciar' funciona correctamente. Debido a esta alerta, cuando ganas aparece ésta antes de la alerta con el mensaje de 'ganaste'."];
-//    UIAlertView *alerta = [[UIAlertView alloc] initWithTitle:@"Saludos"
-//                                                     message:mensaje
-//                                                    delegate:self
-//                                           cancelButtonTitle:@"OK"
-//                                           otherButtonTitles: nil];
-//    [alerta show];
+    if (cuentaAlertas <= 1) {
+        NSString *mensaje = [[NSString alloc] initWithFormat: @"Por alguna razón no funciona correctamente al inciar el juego si no hasta que oprimes el boton probar después de seleccionar un patrón, luego reinicias el juego, pruebas, vuelves a reiniciar y ahora si funciona. En algunos casos funciona con que pruebes y reinicies una vez."];
+        UIAlertView *alerta = [[UIAlertView alloc] initWithTitle:@"Saludos"
+                                                         message:mensaje
+                                                        delegate:self
+                                               cancelButtonTitle:@"OK"
+                                               otherButtonTitles: nil];
+        [alerta show];
+        cuentaAlertas++;
+    }
 
 }
 
